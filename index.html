@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		const maxHp = 50;
+		const minHp = 30;
+
+		const maxPower = 20;
+		const minPower = 10;
+
+		const statusHp = Math.floor(Math.random() * (maxHp + 1 - minHp)) + minHp
+		const statusPower = Math.floor(Math.random() * (maxPower + 1 - minPower)) + minPower
+
+		const player = {
+			name: 'takanobu',
+			hp: statusHp,
+			power: statusPower
+		}
+
+		class Charactor {
+			constructor(status) {
+				this.name = status.name;
+				this.hp = status.hp;
+				this.power = status.power;
+			}
+
+			attack(enemy) {
+				return `${enemy}に${this.power}のダメージ`;
+			}
+		}
+
+		const myCharactor = new Charactor(player);
+
+		console.log(myCharactor);
+		console.log(myCharactor.attack('スライム'));
+
+
+	</script>
+</body>
+
+</html>
